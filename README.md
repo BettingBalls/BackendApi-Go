@@ -42,6 +42,7 @@ project/
 ## 4. Cara Install dan Menjalankan
 
 ### Clone Repository
+```bash
 git clone https://github.com/BettingBalls/BackendApi-Go.git
 cd BackendApi-Go
 
@@ -50,20 +51,28 @@ go mod tidy
 
 # Jalankan server
 go run main.go
+```
 
 ## 5 Contoh Request dan Response API
+```bash
 BASE_URL="http://localhost:8080"
+```
 
 ================== TASK ==================
 ### 1. GET /tasks
+```bash
 curl -s -X GET "$BASE_URL/tasks" | jq
 echo -e "\n"
+```
 
 ### 2. GET /users/{id}/tasks
+```bash
 curl -s -X GET "$BASE_URL/users/1/tasks" | jq
 echo -e "\n"
+```
 
 ### 3. POST /tasks
+```bash
 curl -s -X POST "$BASE_URL/tasks" \
   -H "Content-Type: application/json" \
   -d '{
@@ -75,8 +84,10 @@ curl -s -X POST "$BASE_URL/tasks" \
     "deadline": "2025-12-31"
   }' | jq
 echo -e "\n"
+```
 
 ### 4. POST /users/{id}/tasks
+```bash
 curl -s -X POST "$BASE_URL/users/1/tasks" \
   -H "Content-Type: application/json" \
   -d '{
@@ -87,25 +98,33 @@ curl -s -X POST "$BASE_URL/users/1/tasks" \
     "deadline": "2025-12-31"
   }' | jq
 echo -e "\n"
+```
 
 ### 5. PATCH /tasks/{id}
+```bash
 curl -s -X PATCH "$BASE_URL/tasks/1" \
   -H "Content-Type: application/json" \
   -d '{
     "status": "completed"
   }' | jq
 echo -e "\n"
+```
 
 ### 6. DELETE /tasks/{id}
+```bash
 curl -s -X DELETE "$BASE_URL/tasks/1" | jq
 echo -e "\n"
+```
 
 ================== USER ==================
 ### 7. GET /users
+```bash
 curl -s -X GET "$BASE_URL/users" | jq
 echo -e "\n"
+```
 
 ### 8. POST /users
+```bash
 curl -s -X POST "$BASE_URL/users" \
   -H "Content-Type: application/json" \
   -d '{
@@ -113,8 +132,11 @@ curl -s -X POST "$BASE_URL/users" \
     "role": "admin"
   }' | jq
 echo -e "\n"
+```
 
 ### 9. DELETE /users/{id}
+```bash
 curl -s -X DELETE "$BASE_URL/users/1" | jq
 echo -e "\n"
+```
 ================== END ==================
