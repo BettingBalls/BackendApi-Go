@@ -56,15 +56,15 @@ go run main.go
 BASE_URL="http://localhost:8080"
 
 ================== TASK ==================
-#1. GET /tasks
+# 1. GET /tasks
 curl -s -X GET "$BASE_URL/tasks" | jq
 echo -e "\n"
 
-#2. GET /users/{id}/tasks
+# 2. GET /users/{id}/tasks
 curl -s -X GET "$BASE_URL/users/1/tasks" | jq
 echo -e "\n"
 
-#3. POST /tasks
+# 3. POST /tasks
 curl -s -X POST "$BASE_URL/tasks" \
   -H "Content-Type: application/json" \
   -d '{
@@ -77,7 +77,7 @@ curl -s -X POST "$BASE_URL/tasks" \
   }' | jq
 echo -e "\n"
 
-#4. POST /users/{id}/tasks
+# 4. POST /users/{id}/tasks
 curl -s -X POST "$BASE_URL/users/1/tasks" \
   -H "Content-Type: application/json" \
   -d '{
@@ -89,7 +89,7 @@ curl -s -X POST "$BASE_URL/users/1/tasks" \
   }' | jq
 echo -e "\n"
 
-#5. PATCH /tasks/{id}
+# 5. PATCH /tasks/{id}
 curl -s -X PATCH "$BASE_URL/tasks/1" \
   -H "Content-Type: application/json" \
   -d '{
@@ -97,16 +97,16 @@ curl -s -X PATCH "$BASE_URL/tasks/1" \
   }' | jq
 echo -e "\n"
 
-#6. DELETE /tasks/{id}
+# 6. DELETE /tasks/{id}
 curl -s -X DELETE "$BASE_URL/tasks/1" | jq
 echo -e "\n"
 
 ================== USER ==================
-#7. GET /users
+# 7. GET /users
 curl -s -X GET "$BASE_URL/users" | jq
 echo -e "\n"
 
-#8. POST /users
+# 8. POST /users
 curl -s -X POST "$BASE_URL/users" \
   -H "Content-Type: application/json" \
   -d '{
@@ -115,7 +115,7 @@ curl -s -X POST "$BASE_URL/users" \
   }' | jq
 echo -e "\n"
 
-#9. DELETE /users/{id}
+# 9. DELETE /users/{id}
 curl -s -X DELETE "$BASE_URL/users/1" | jq
 echo -e "\n"
 ================== END ==================
